@@ -54,6 +54,7 @@ class ConsultaController extends Controller
 
         if ($nuevaConsulta) {
             return redirect()->back()->with('success', true)->with('message', 'Tu consulta fue enviada con éxito!');
+            // +FALTA HACER QUE ENVÍE UN EMAIL CON LA CONSULTA!!
         }
     }
 
