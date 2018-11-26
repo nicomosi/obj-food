@@ -300,6 +300,11 @@
                     <div class="search-close"><i class="icon-close"></i></div>
                 </div>
             </div>
+            @if (session('success'))
+                <div class="col-md-12 alert-success d-flex align-items-center justify-content-center" style="height: 10vh; font-size:1.5em; font-weight:600; ">
+                    {{session('message')}}
+                </div>
+            @endif
         </header><!-- End Header Section -->
         <!-- Start Contact Popup -->
         <div id="contactPopup" class="modal fade">
@@ -313,39 +318,36 @@
                     </div>
                     <div class="modal-body">
                         <div class="row pb-4">
-                            <div class="col-md-6">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
-                                    <input class="mdl-textfield__input" type="text" id="contact-name">
-                                    <label class="mdl-textfield__label" for="contact-name">Tu nombre</label>
+                            <form action="{{route('nuevaConsulta')}}" method="post" style="width:100%;" class=" d-flex flex-wrap">
+                                @csrf
+                                <div class="col-md-6">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
+                                        <input class="mdl-textfield__input" type="text" id="contact-name" name="nombre">
+                                        <label class="mdl-textfield__label" for="contact-name">Tu nombre</label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
-                                    <input class="mdl-textfield__input" type="text" id="contact-email">
-                                    <label class="mdl-textfield__label" for="contact-email">Tu e-mail</label>
+                                <div class="col-md-6">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
+                                        <input class="mdl-textfield__input" type="text" id="contact-email" name="email">
+                                        <label class="mdl-textfield__label" for="contact-email">Tu e-mail</label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
-                                    <input class="mdl-textfield__input" type="text" id="contact-phone">
-                                    <label class="mdl-textfield__label" for="contact-phone">Tu Celular</label>
+                                <div class="col-md-6">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
+                                        <input class="mdl-textfield__input" type="text" id="contact-phone" name="celular">
+                                        <label class="mdl-textfield__label" for="contact-phone">Tu Celular</label>
+                                    </div>
                                 </div>
-                            </div>
-                            {{-- <div class="col-md-6">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
-                                    <input class="mdl-textfield__input" type="text" id="contact-subject">
-                                    <label class="mdl-textfield__label" for="contact-subject">Your Subject</label>
+                                <div class="col-12">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
+                                        <textarea class="mdl-textfield__input" rows="3" id="contact-message" name="mensaje"></textarea>
+                                        <label class="mdl-textfield__label" for="contact-message">Mensaje</label>
+                                    </div>
                                 </div>
-                            </div> --}}
-                            <div class="col-12">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
-                                    <textarea class="mdl-textfield__input" rows="3" id="contact-message" ></textarea>
-                                    <label class="mdl-textfield__label" for="contact-message">Mensaje</label>
+                                <div class="col-12 text-center">
+                                    <button class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-success">Enviar Consulta</button>
                                 </div>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-success">Enviar Consulta</button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

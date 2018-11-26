@@ -13,3 +13,5 @@
 
 Route::get('/', 'Controller@index')->name('home');
 Route::get('/faq', 'Controller@faq')->name('faq');
+
+Route::post('/nuevaConsulta', 'ConsultaController@store')->name('nuevaConsulta');
