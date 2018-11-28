@@ -20,9 +20,9 @@
                                 <div class="slider-info">
                                     <br>
                                     <h1>Una vianda, un objetivo</h1>
-                                    <p >We have created 80+ Pages, 300+ Components or Shortcodes, Popup for this template and more in future. #twitterhash, @facebooktag</p>
+                                    <p>¿Llevar a cabo una dieta se esta volviendo dificil?<br> En <strong>Objective Food</strong> nos encargamos de que tus comidas sean <strong> ricas </strong>, <strong>nutritivas </strong> y <strong>prácticas</strong>. <br><br>¡Alcanzá tus metas sin preocupaciones!</p>
                                     <div class="slider-button">
-                                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect button button-primary button-pill">Explore More</a>
+                                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect button button-primary button-pill">Ver Más</a>
                                     </div>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
         <div class="ecommerce">
             <div class="layer-stretch">
                 <div class="layer-wrapper pb-20">
-                    <div class="layer-ttl"><h4>Featured <span class="text-primary">Product</span></h4></div>
+                    <div class="layer-ttl"><h4>Productos<span class="text-primary"> Destacados</span></h4></div>
                     <div class="row pt-4">
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <div class="product-card">
@@ -132,7 +132,7 @@
         <div class="bg-light">
             <div class="layer-stretch">
                 <div class="layer-wrapper pb-20">
-                    <div class="layer-ttl"><h4>Latest <span class="text-primary">Prodcut</span></h4></div>
+                    <div class="layer-ttl"><h4>Productos <span class="text-primary">Más Recientes</span></h4></div>
                     <div class="row pt-4">
                         <div class="col-12">
                             <div class="related-product">
@@ -172,8 +172,8 @@
         <div class="blog">
             <div class="layer-stretch">
                 <div class="layer-wrapper pb-3">
-                    <div class="layer-ttl"><h4>Latest <span class="text-primary">News</span></h4></div>
-                    <div class="layer-sub-ttl">Would you like to see more?</div>
+                    <div class="layer-ttl"><h4>Últimas <span class="text-primary">Noticias</span></h4></div>
+                    <div class="layer-sub-ttl">Leé nuestros articulos de nutrición</div>
                     <div class="row pt-4">
                         <div class="col-md-6 col-lg-4">
                             <div class="blog-card">
@@ -225,7 +225,7 @@
             </div>
         </div>
         <!-- Start Action Section -->
-        <div class="action">
+        {{-- <div class="action">
             <div class="layer-stretch">
                 <div class="layer-wrapper text-center">
                     <div class="layer-ttl"><h4>Want to Live Like <span class="text-primary">King</span>. We are Here</h4></div>
@@ -233,7 +233,7 @@
                     <a href="#" class="btn btn-outline btn-primary btn-pill btn-outline-2x btn-lg mt-3">Contact us</a>
                 </div>
             </div>
-        </div><!-- End of Action Section -->
+        </div><!-- End of Action Section --> --}}
 
 
         <!-- Start Footer Section -->

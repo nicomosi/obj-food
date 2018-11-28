@@ -49,9 +49,10 @@
                             </ul>
                         </div>
                         <div class="col-md-7 hdr-link text-right">
-                            <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1"><i class="icon-login mr-2"></i>Login</a>
+                            <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1" href="{{route('login')}}"><i class="icon-login mr-2"></i>Login</a>
+                            {{-- <a href="#" class="btn btn-primary m-3" data-toggle="modal" data-target="#signInPopup">Sign In Popup</a> --}}
                             <div class="separator"></div>
-                            <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1"><i class="icon-user-follow mr-2"></i>Registro</a>
+                                <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1" href="{{route('register')}}"><i class="icon-user-follow mr-2"></i>Registro</a>
                             <div class="separator"></div>
                             <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1" id="my-account"><i class="icon-user-follow mr-2"></i>My Account</a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="my-account">
@@ -78,7 +79,7 @@
                                 <li class="menu-megamenu-li">
                                     <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{{url('/')}}">Home</a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Feature <i class="fa fa-chevron-down"></i></a>
                                     <ul class="menu-dropdown">
                                         <li>
@@ -126,56 +127,56 @@
                                         <li><a href="404.html">404 Page Not Found</a></li>
                                         <li><a href="503.html">503 Temporarily Unavailable</a></li>
                                     </ul>
-                                </li>
+                                </li> --}}
                                 <li class="menu-megamenu-li">
-                                    <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
+                                    <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Viandas <i class="fa fa-chevron-down"></i></a>
                                     <ul class="menu-megamenu">
                                         <li class="row">
                                             <div class="col-lg-2">
-                                                <div class="megamenu-ttl">Service Styles</div>
+                                                <div class="megamenu-ttl">Viandas Comunes</div>
                                                 <ul>
-                                                    <li><a href="services-1.html">Services Style 1</a></li>
-                                                    <li><a href="services-2.html">Services Style 2</a></li>
-                                                    <li><a href="services-3.html">Services Style 3</a></li>
-                                                    <li><a href="services-4.html">Services Style 4</a></li>
-                                                    <li><a href="services-5.html">Services Style 5</a></li>
-                                                    <li><a href="services-6.html">Services Style 6</a></li>
-                                                    <li><a href="services-7.html">Services Style 7</a></li>
+                                                    <li><a href="">Vianda 1</a></li>
+                                                    <li><a href="">Vianda 2</a></li>
+                                                    <li><a href="">Vianda 3</a></li>
+                                                    <li><a href="">Vianda 4</a></li>
+                                                    <li><a href="">Vianda 5</a></li>
+                                                    <li><a href="">Vianda 6</a></li>
+                                                    <li><a href="">Vianda 7</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-lg-2">
-                                                <div class="megamenu-ttl">Team Styles</div>
+                                                <div class="megamenu-ttl">Viandas Veggie</div>
                                                 <ul>
-                                                    <li><a href="team-1.html">Team Style 1</a></li>
-                                                    <li><a href="team-2.html">Team Style 2</a></li>
-                                                    <li><a href="team-3.html">Team Style 3</a></li>
-                                                    <li><a href="team-4.html">Team Style 4</a></li>
-                                                    <li><a href="team-5.html">Team Style 5</a></li>
-                                                    <li><a href="team-6.html">Team Style 6</a></li>
-                                                    <li><a href="team-7.html">Team Style 7</a></li>
+                                                    <li><a href="">Vianda 1</a></li>
+                                                    <li><a href="">Vianda 2</a></li>
+                                                    <li><a href="">Vianda 3</a></li>
+                                                    <li><a href="">Vianda 4</a></li>
+                                                    <li><a href="">Vianda 5</a></li>
+                                                    <li><a href="">Vianda 6</a></li>
+                                                    <li><a href="">Vianda 7</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-lg-2">
-                                                <div class="megamenu-ttl">Shop Styles</div>
+                                                <div class="megamenu-ttl">Aumento de Masa Muscular</div>
                                                 <ul>
-                                                    <li><a href="shop-1.html">Shop Style 1</a></li>
-                                                    <li><a href="shop-2.html">Shop Style 2</a></li>
-                                                    <li><a href="shop-3.html">Shop Style 3</a></li>
-                                                    <li><a href="shop-4.html">Shop Style 4</a></li>
-                                                    <li><a href="shop-5.html">Shop Style 5</a></li>
-                                                    <li><a href="shop-6.html">Shop Style 6</a></li>
-                                                    <li><a href="shop-7.html">Shop Style 7</a></li>
+                                                    <li><a href="">Vianda 1</a></li>
+                                                    <li><a href="">Vianda 2</a></li>
+                                                    <li><a href="">Vianda 3</a></li>
+                                                    <li><a href="">Vianda 4</a></li>
+                                                    <li><a href="">Vianda 5</a></li>
+                                                    <li><a href="">Vianda 6</a></li>
+                                                    <li><a href="">Vianda 7</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-lg-2">
-                                                <div class="megamenu-ttl">Shop Styles</div>
+                                                <div class="megamenu-ttl">Reducción de Peso</div>
                                                 <ul>
-                                                    <li><a href="shop-8.html">Shop Style 8</a></li>
-                                                    <li><a href="shop-9.html">Shop Style 9</a></li>
-                                                    <li><a href="shop-10.html">Shop Style 10</a></li>
-                                                    <li><a href="shop-page-1.html">Product Page 1</a></li>
-                                                    <li><a href="shop-page-2.html">Product Page 2</a></li>
-                                                    <li><a href="shop-page-3.html">Product Page 3</a></li>
+                                                    <li><a href="">Vianda 1</a></li>
+                                                    <li><a href="">Vianda 2</a></li>
+                                                    <li><a href="">Vianda 3</a></li>
+                                                    <li><a href="">Vianda 4</a></li>
+                                                    <li><a href="">Vianda 5</a></li>
+                                                    <li><a href="">Vianda 6</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-lg-2">
@@ -206,14 +207,14 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Portfolio <i class="fa fa-chevron-down"></i></a>
+                                    <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Blog <i class="fa fa-chevron-down"></i></a>
                                     <ul class="menu-dropdown">
                                         <li>
-                                            <a>Portfolio Default</a>
+                                            <a>Visitar Blog</a>
                                             <ul class="menu-dropdown menu-dropdown-left">
-                                                <li><a href="portfolio-1.html">2 Column</a></li>
-                                                <li><a href="portfolio-2.html">3 Column</a></li>
-                                                <li><a href="portfolio-3.html">4 Column</a></li>
+                                                <li><a href="">Articulos de Salúd</a></li>
+                                                <li><a href="">Articulos de Nutrición</a></li>
+                                                <li><a href="">Articulos de Deportes</a></li>
                                             </ul>
                                         </li>
                                         <li>
@@ -293,7 +294,7 @@
                 <div class="search-bar animated zoomIn">
                     <div class="search-content">
                         <div class="search-input">
-                            <input type="text" placeholder="Enter your text ....">
+                            <input type="text" placeholder="¿Que estás Buscando?">
                             <button class="search-btn"><i class="icon-magnifier"></i></button>
                         </div>
                     </div>
@@ -354,7 +355,10 @@
             </div>
         </div><!-- End contact Popup -->
 
+        {{-- Start Login Popup --}}
 
+
+        {{-- End Login Popup --}}
 
 
 

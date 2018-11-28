@@ -10945,10 +10945,10 @@ body {
   background: #DDD;
   text-align: center; }
   .or-using::before {
-    content: 'Or Using';
+    content: 'Ingresar con';
     position: absolute;
     top: -10px;
-    left: 50%;
+    left: 45%;
     display: inline-block;
     margin-left: -55px;
     padding: 0 30px;
@@ -10965,7 +10965,7 @@ body {
     padding: 12px 0;
     font-size: 14px;
     color: #FFF; }
-    .social-login a .fa {
+    .social-login a .fab {
       width: 20px;
       height: 20px;
       line-height: 20px;
@@ -10973,7 +10973,7 @@ body {
       margin: 0 10px 0 0;
       background: #FFF;
       border-radius: 2px; }
-    .social-login a .fa-facebook {
+    .social-login a .fa-facebook-f{
       color: #3B5999; }
     .social-login a .fa-google {
       color: #DC4A38; }
@@ -10996,9 +10996,9 @@ body {
   .login-link a {
     display: inline-block;
     font-size: 14px;
-    color: #009686;
+    color: #fdfdfd;
     letter-spacing: .5px;
-    margin: 0 0 0 5px;
+    /* margin: 0 0 0 5px; */
     cursor: pointer; }
 
 /*************************************************
