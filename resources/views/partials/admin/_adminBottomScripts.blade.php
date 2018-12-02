@@ -1,0 +1,11 @@
+  <!-- Vendor Plugin -->
+    <script type="text/javascript" src="{{url('admin/assets/plugin/vendor.min.js')}}"></script>
+    <!-- Datatables Plugin -->
+    <script type="text/javascript" src="{{url('admin/assets/plugin/datatable/datatables.min.js')}}"></script>
+    <!-- Custom Script Plugin -->
+    <script type="text/javascript" src="{{url('admin/dist/js/custom.js')}}"></script>
+    <script>
+        //Intilize datable for ticket.
+        $('.ticket-table').DataTable({
+            responsive: true
+        });</script>
