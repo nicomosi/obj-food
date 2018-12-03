@@ -38,24 +38,25 @@
                     <div class="layer-ttl"><h4>Productos<span class="text-primary"> Destacados</span></h4></div>
                     <div class="row pt-4">
                         <div class="col-sm-12 col-md-6 col-lg-4">
+                            @foreach (App\Producto::where('destacado', 1)->get() as $producto)
                             <div class="product-card">
                                 <div class="product-img">
                                     <div class="owl-carousel owl-theme theme-owlslider dots-overlay text-center">
                                         <div class="theme-owlslider-container">
-                                            <a href="#"><img class="img-responsive" src="{{url('img/shop-11.jpg')}}" alt=""></a>
+                                            <a href="#"><img class="img-responsive" src="/storage/productos/{{$producto->producto_foto}}" alt=""></a>
                                         </div>
-                                        <div class="theme-owlslider-container">
+                                        {{-- <div class="theme-owlslider-container">
                                             <a href="#"><img class="img-responsive" src="{{url('img/shop-12.jpg')}}" alt=""></a>
                                         </div>
                                         <div class="theme-owlslider-container">
                                             <a href="#"><img class="img-responsive" src="{{url('img/shop-13.jpg')}}" alt=""></a>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                                 <div class="product-details">
-                                    <h5 class="title"><a href="#">Canon Camera</a></h5>
+                                    <h5 class="title"><a href="#">{{$producto->producto_nombre}}</a></h5>
                                     <div class="price">
-                                        <del>$79.99</del>$59.99
+                                        <del>$79.99</del>${{$producto->producto_precio}}
                                     </div>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
@@ -70,59 +71,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div class="product-img">
-                                    <a href="#"><img src="{{url('img/shop-21.jpg')}}" alt=""></a>
-                                </div>
-                                <div class="product-details">
-                                    <h5 class="title"><a href="#">Shoes, Watch, Belts, T-shirts</a></h5>
-                                    <div class="price">
-                                        <del>$179.99</del>$159.99
-                                    </div>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <div>
-                                        <a href="#" class="btn btn-outline btn-dark btn-outline-1x btn-sm m-1">Add to Cart</a>
-                                        <a href="#" class="btn btn-outline btn-dark btn-outline-1x btn-sm m-1">Buy Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div class="product-img">
-                                    <div class="owl-carousel owl-theme theme-owlslider dots-overlay text-center">
-                                        <div class="theme-owlslider-container">
-                                            <a href="#"><img class="img-responsive" src="{{url('img/shop-31.jpg')}}" alt=""></a>
-                                        </div>
-                                        <div class="theme-owlslider-container">
-                                            <a href="#"><img class="img-responsive" src="{{url('img/shop-32.jpg')}}" alt=""></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-details">
-                                    <h5 class="title"><a href="#">Eyeglass, Watch</a></h5>
-                                    <div class="price">$29.99</div>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <div>
-                                        <a href="#" class="btn btn-outline btn-dark btn-outline-1x btn-sm m-1">Add to Cart</a>
-                                        <a href="#" class="btn btn-outline btn-dark btn-outline-1x btn-sm m-1">Buy Now</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -137,31 +86,13 @@
                         <div class="col-12">
                             <div class="related-product">
                                 <div class="owl-carousel owl-theme multi-item-slider">
-                                    <div class="theme-owlslider-container">
-                                        <img class="img-responsive" src="{{url('img/shop-11.jpg')}}" alt="">
-                                        <h6 class="title"><a href="#">Canon Camera</a></h6>
-                                        <div class="price">$499</div>
-                                    </div>
-                                    <div class="theme-owlslider-container">
-                                        <img class="img-responsive" src="{{url('img/shop-21.jpg')}}" alt="">
-                                        <h6 class="title"><a href="#">Multiple Product</a></h6>
-                                        <div class="price">$499</div>
-                                    </div>
-                                    <div class="theme-owlslider-container">
-                                        <img class="img-responsive" src="{{url('img/shop-31.jpg')}}" alt="">
-                                        <h6 class="title"><a href="#">Leather Wallet and Watch</a></h6>
-                                        <div class="price">$499</div>
-                                    </div>
-                                    <div class="theme-owlslider-container">
-                                        <img class="img-responsive" src="{{url('img/shop-41.jpg')}}" alt="">
-                                        <h6 class="title"><a href="#">Leather Wallet and Watch</a></h6>
-                                        <div class="price">$499</div>
-                                    </div>
-                                    <div class="theme-owlslider-container">
-                                        <img class="img-responsive" src="{{url('img/shop-51.jpg')}}" alt="">
-                                        <h6 class="title"><a href="#">Leather Wallet and Watch</a></h6>
-                                        <div class="price">$499</div>
-                                    </div>
+                                    @foreach ($productos as $producto)
+                                        <div class="theme-owlslider-container">
+                                            <img class="img-responsive" src="/storage/productos/{{$producto->producto_foto}}" alt="">
+                                            <h6 class="title"><a href="#">{{$producto->producto_nombre}}</a></h6>
+                                            <div class="price">${{$producto->producto_precio}}</div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -169,7 +100,7 @@
                 </div>
             </div>
         </div><!-- End of Team Section -->
-        <div class="blog">
+        {{-- <div class="blog">
             <div class="layer-stretch">
                 <div class="layer-wrapper pb-3">
                     <div class="layer-ttl"><h4>Últimas <span class="text-primary">Noticias</span></h4></div>
@@ -223,7 +154,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Start Action Section -->
         {{-- <div class="action">
             <div class="layer-stretch">

@@ -21,7 +21,7 @@
                                 <li>
                                     <a href="/adm/consultas"><span>Consultas</span></a>
                                 </li>
-                               <li>
+                                <li>
                                     <a href="/adm/productos/new"><span>Nuevo Producto</span></a>
                                 </li>
                                 <li>
@@ -585,13 +585,13 @@
                 <div class="page-title">
                     <div class="row align-items-center">
                         <div class="col-sm-6">
-                            <h2 class="page-title-text">Consultas</h2>
+                            <h2 class="page-title-text">Productos</h2>
                         </div>
                         <div class="col-sm-6 text-right">
                             <div class="breadcrumbs">
                                 <ul>
                                     <li><a href="#">Home</a></li>
-                                    <li>Support Ticket</li>
+                                    <li>Productos</li>
                                 </ul>
                             </div>
                         </div>
@@ -603,111 +603,29 @@
                         <div class="col-12">
                             <div class="panel panel-default">
                                 <div class="panel-head">
-                                    <div class="panel-title">
-                                        <span class="panel-title-text">Todas las consultas</span>
-                                    </div>
+                                    <h5 class="panel-title">Listado de Productos</h5>
                                 </div>
-                                <div id="ticket-table">
-                                    <table class="ticket-table" style="width: 100%;">
+                                <div class="panel-body">
+                                    <table class="table table-striped table-bordered basic-datatable" cellspacing="0" width="100%">
                                         <thead>
-                                            <tr><th class="d-none"></th></tr>
+                                            <tr>
+                                                <th>Nombre del Producto</th>
+                                                <th>Stock</th>
+                                                <th>Precio</th>
+                                                <th>#</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
-
-                                            @foreach ($consultas as $consulta)
-
-                                            <tr>
-                                                <td>
-                                                    <div class="ticket-block">
-                                                        <div class="ticket">
-                                                            <div class="row ticket-hdr">
-                                                                <div class="col-sm-4 card-left text-left">
-                                                                    <span class="text-center">#{{$consulta->id}}</span>
-                                                                </div>
-                                                                <div class="col-sm-8 text-right ticket-right">
-                                                                    <span>{{$consulta->created_at}}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row ticket-bdy">
-                                                                <div class="col-sm-6 col-md-5 text-left">
-                                                                    <div class="ticket-img">
-                                                                        <i class="icon-user"></i>
-                                                                    </div>
-                                                                    <div class="ticket-info">
-                                                                        <a class="ticket-name" target="_blank">{{$consulta->nombre}}</a>
-                                                                        <div class="ticket-text">{{$consulta->email}}</div>
-                                                                        <div class="ticket-text">{{$consulta->celular}}</div>
-                                                                        <div class="ticket-text">Deparmtent - Support</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6 col-md-7 ticket-subject">
-                                                                    <span>Asunto</span>
-                                                                    <p>Theme is not installing</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row ticket-ftr align-items-center">
-                                                                <div class="col-sm-8 text-left">
-                                                                    <span class="badge badge-light badge-pill badge-sm">Se actualizó: {{$consulta->updated_at}}</span>
-                                                                    <span class="badge badge-default badge-pill badge-sm">Open</span>
-                                                                    <span class="badge badge-primary badge-pill badge-sm">New</span>
-
-                                                                </div>
-                                                                <div class="col-sm-4 text-right ticket-action">
-                                                                    <a href="#" class="btn btn-primary btn-circle m-1 m-1"><i class="icon-pencil"></i></a>
-                                                                    <a class="btn btn-danger btn-circle m-1"><i class="icon-trash"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            @foreach ($productos as $producto)
+                                                <tr>
+                                                    <td><a href="/adm/productos/{{$producto->id}}">{{$producto->producto_nombre}}</a></td>
+                                                    <td>{{$producto->producto_stock}}</td>
+                                                    <td>{{$producto->producto_precio}}</td>
+                                                    <td>
+                                                        <a href="/adm/productos/{{$producto->id}}">Editar</a>
+                                                    </td>
+                                                </tr>
                                             @endforeach
-
-
-                                            <tr>
-                                                <td>
-                                                    <div class="ticket-block">
-                                                        <div class="ticket">
-                                                            <div class="row ticket-hdr">
-                                                                <div class="col-sm-4 card-left text-left">
-                                                                    <span class="text-center">#2</span>
-                                                                </div>
-                                                                <div class="col-sm-8 text-right ticket-right">
-                                                                    <span>Created Date - 11 March 2018</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row ticket-bdy">
-                                                                <div class="col-sm-6 col-md-5 text-left">
-                                                                    <div class="ticket-img">
-                                                                        <i class="icon-user"></i>
-                                                                    </div>
-                                                                    <div class="ticket-info">
-                                                                        <a class="ticket-name" target="_blank">Antheny</a>
-                                                                        <div class="ticket-text">Deparmtent - Support</div>
-                                                                        <div class="ticket-text">Priority - <span class="badge badge-danger badge-pill badge-sm">High</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6 col-md-7 ticket-subject">
-                                                                    <span>Subject</span>
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor vel quisquam temporibus incidunt.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row ticket-ftr align-items-center">
-                                                                <div class="col-sm-8 text-left">
-                                                                    <span class="badge badge-light badge-pill badge-sm">Last updated -  11 March 2018</span>
-                                                                    <span class="badge badge-default badge-pill badge-sm">Open</span>
-                                                                    <span class="badge badge-warning badge-pill badge-sm">Wating for Reply</span>
-
-                                                                </div>
-                                                                <div class="col-sm-4 text-right ticket-action">
-                                                                    <a href="#" class="btn btn-primary btn-circle m-1 m-1"><i class="icon-pencil"></i></a>
-                                                                    <a class="btn btn-danger btn-circle m-1"><i class="icon-trash"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -932,6 +850,6 @@
 
     <!-- Include js files -->
     @include('partials.admin._adminBottomScripts')
-
+    <script type="text/javascript" src="{{Url("admin/dist/js/demo/datatable.js")}}"></script>
 </body>
 </html>
