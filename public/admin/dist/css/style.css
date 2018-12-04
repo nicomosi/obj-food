@@ -12984,5 +12984,7 @@ select.form-control:not([size]):not([multiple]) {
     text-align: center; }
   div.dataTables_wrapper div.dataTables_filter input {
     display: block; } }
-
+#user-list-email:hover{
+    color: rgb(34, 166, 255);
+}
 /*# sourceMappingURL=style.css.map */
