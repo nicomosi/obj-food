@@ -27,3 +27,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 // ADMIN VIEWS
 Route::get('/adm', 'Auth\AdminLoginController@index')->name('adminLogin');
 Route::get('/adm/consultas' , 'Admin\ConsultasController@index')->name('consultas');
+// Route::delete('')
+

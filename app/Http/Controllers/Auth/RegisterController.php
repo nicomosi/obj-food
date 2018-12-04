@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
+
 
 class RegisterController extends Controller
 {
@@ -66,12 +69,10 @@ class RegisterController extends Controller
        $user = User::create([
         'name' => $data['name'],
         'email' => $data['email'],
-        'password' => bcrypt($data['password']),
+        'role_id'=>3,
+        'password' => bcrypt($data['password'])
         ]);
 
-        $user
-        ->roles()
-        ->attach(Role::where('name', 'user')->first());
-    return $user;
+        return $user;
     }
 }

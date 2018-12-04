@@ -16,7 +16,7 @@ class ConsultasController extends Controller
      */
     public function index()
     {
-        $consultas=Consulta::all();
+        $consultas=Consulta::orderBy('id', 'desc')->get();
         return view('admin.consultas')->with('consultas', $consultas);
     }
 
@@ -83,6 +83,7 @@ class ConsultasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $consulta=Consulta::find($id);
+        $consulta->delete();
     }
 }
