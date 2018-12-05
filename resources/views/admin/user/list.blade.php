@@ -43,21 +43,28 @@
                                     <table class="table table-striped table-bordered basic-datatable" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
-                                                <th>Nombre del Producto</th>
-                                                <th>Stock</th>
-                                                <th>Precio</th>
-                                                <th>#</th>
+                                                <th>ID</th>
+                                                <th>Usuario</th>
+                                                <th>Email</th>
+                                                <th>Telefono</th>
+                                                <th>Tipo</th>
+                                                <th>Creado</th>
+                                                <th>Actualizado</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($productos as $producto)
+                                            @foreach ($users as $user)
                                                 <tr>
-                                                    <td><a href="/adm/productos/{{$producto->id}}">{{$producto->nombre}}</a></td>
-                                                    <td>{{$producto->stock}}</td>
-                                                    <td>{{$producto->precio}}</td>
-                                                    <td>
-                                                        <a href="/adm/productos/{{$producto->id}}">Editar</a>
-                                                    </td>
+                                                    <td>{{$user->id}}</td>
+                                                    <td>{{$user->name}}</a></td>
+                                                    <td><a href="{{route('showUser', ['id'=>$user->id])}}" id="user-list-email">{{$user->email}}</a></td>
+                                                    <td>{{$user->telefono}}</td>
+                                                    <td>{{$user->role_id}}</td>
+                                                    <td>{{$user->created_at}}</td>
+                                                    <td>{{$user->updated_at}}</td>
+                                                    {{-- <td>
+                                                        <a href="/adm/productos/{{$user->id}}">Editar</a>
+                                                    </td> --}}
                                                 </tr>
                                             @endforeach
                                         </tbody>

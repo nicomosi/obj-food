@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+use App\User;
+
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +16,21 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users=User::all();
+        return view('admin.user.list')->with('users', $users);
     }
+    public function showUser($id)
+    {
+        $user=User::find($id);
+        // $userRole=
+        return view('admin.user.form')->with('user', $user);
+
+    }
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
