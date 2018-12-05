@@ -28,35 +28,67 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/adm', [
     'uses'=>'Auth\AdminLoginController@index',
     'as'=>'adminLogin'
-    ]);
+]);
 
 Route::get('/adm/consultas' , [
     'uses'=>'Admin\ConsultasController@index',
     'as'=>'consultas',
     'middleware'=>'roles',
     'roles'=>['admin', 'superAdmin']
-    ]);
+]);
 
 Route::get('/adm/usuarios', [
     'uses'=>'Admin\UsersController@index',
     'as'=>'usuarios',
     'middleware'=>'roles',
     'roles'=>['admin', 'superAdmin']
-    ]);
+]);
 
 Route::get('/adm/usuarios/{id}', [
     'uses'=>'Admin\UsersController@showUser',
     'as'=>'showUser',
     'middleware'=>'roles',
     'roles'=>['admin', 'superAdmin']
-    ]);
+]);
 
+Route::get('/adm/productos', [
+    'uses' => 'Admin\ProductosController@index',
+    'as' => 'viewProductos',
+    'middleware' => 'roles',
+    'roles' => ['admin', 'superAdmin']
+]);
 
+Route::get('/adm/productos/new', [
+    'uses' => 'Admin\ProductosController@create',
+    'as' => 'productos',
+    'middleware' => 'roles',
+    'roles' => ['admin', 'superAdmin']
+]);
 
-Route::get('/adm/productos/new', 'Admin\ProductosController@create')->name('productos');
-Route::get('/adm/productos', 'Admin\ProductosController@index')->name('viewProductos');
-Route::post('/adm/productos/new', 'Admin\ProductosController@store')->name('newProducto');
-Route::get('/adm/productos/{id}', 'Admin\ProductosController@show')->name('editProducto');
-Route::put('/adm/productos/{id}', 'Admin\ProductosController@edit')->name('editProducto');
-Route::delete('/adm/productos/{id}/delete', 'Admin\ProductosController@destroy');
+Route::post('/adm/productos/new', [
+    'uses' => 'Admin\ProductosController@store',
+    'as' => 'newProducto',
+    'middleware' => 'roles',
+    'roles' => ['admin', 'superAdmin']
+]);
 
+Route::get('/adm/productos/{id}', [
+    'uses' => 'Admin\ProductosController@show',
+    'as' => 'showProducto',
+    'middleware' => 'roles',
+    'roles' => ['admin', 'superAdmin']
+]);
+
+Route::put('/adm/productos/{id}', [
+    'uses' => 'Admin\ProductosController@edit',
+    'as' => 'editProducto',
+    'middleware' => 'roles',
+    'roles' => ['admin', 'superAdmin']
+]);
+
+Route::delete('/adm/productos/{id}/delete', [
+    'uses' => 'Admin\ProductosController@destroy',
+    'as' => 'deleteProducto',
+    'middleware' => 'roles',
+    'roles' => ['admin', 'superAdmin']
+]);
