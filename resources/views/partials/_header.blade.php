@@ -17,14 +17,7 @@
                                     <a href="#" id="sample-facebook-1"><i class="fab fa-facebook"></i></a>
                                     <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="sample-facebook-1">Facebook</span>
                                 </li>
-                                {{-- <li>
-                                    <a href="#" id="sample-twitter-1"><i class="fab fa-twitter"></i></a>
-                                    <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="sample-twitter-1">Twitter</span>
-                                </li>
-                                <li>
-                                    <a href="#" id="sample-google-1"><i class="fab fa-google"></i></a>
-                                    <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="sample-google-1">Google</span>
-                                </li> --}}
+
                                 <li>
                                     <a href="#" id="sample-instagram-1"><i class="fab fa-instagram"></i></a>
                                     <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="sample-instagram-1">Instagram
@@ -34,33 +27,41 @@
                                     <a href="#" id="sample-youtube-1"><i class="fab fa-youtube"></i></a>
                                     <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="sample-youtube-1">Youtube</span>
                                 </li>
-                                {{-- <li>
-                                    <a href="#" id="sample-linkedin-1"><i class="fab fa-linkedin"></i></a>
-                                    <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="sample-linkedin-1">Linkedin</span>
-                                </li>
-                                <li>
-                                    <a href="#" id="sample-flickr-1"><i class="fab fa-flickr"></i></a>
-                                    <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="sample-flickr-1">Flickr</span>
-                                </li>
-                                <li>
-                                    <a href="#" id="sample-rss-1"><i class="fa fa-rss" ></i></a>
-                                    <span class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="sample-rss-1">Rss</span>
-                                </li> --}}
+
                             </ul>
                         </div>
                         <div class="col-md-7 hdr-link text-right">
+                            {{-- @guest --}}
                             <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1" href="{{route('login')}}"><i class="icon-login mr-2"></i>Login</a>
                             {{-- <a href="#" class="btn btn-primary m-3" data-toggle="modal" data-target="#signInPopup">Sign In Popup</a> --}}
                             <div class="separator"></div>
-                                <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1" href="{{route('register')}}"><i class="icon-user-follow mr-2"></i>Registro</a>
-                            <div class="separator"></div>
-                            <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1" id="my-account"><i class="icon-user-follow mr-2"></i>My Account</a>
+                                @if (Route::has('register'))
+                                    <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1" href="{{route('register')}}"><i class="icon-user-follow mr-2"></i>Registro</a>
+                                @endif
+                                <div class="separator"></div>
+                                {{-- @else --}}
+                                <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1" id="my-account"><i class="icon-user-follow mr-2"></i>My Account</a>
+                                {{-- @endguest --}}
+                            {{-- @guest --}}
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="my-account">
-                                <li class="mdl-menu__item">Login</li>
-                                <li class="mdl-menu__item">Register</li>
-                                <li class="mdl-menu__item">My Profile</li>
+                                <li class="mdl-menu__item">Ingresar</li>
+                                <li class="mdl-menu__item">Registrarme</li>
+
+                                <li class="mdl-menu__item">My Cuenta</li>
                                 <li class="mdl-menu__item">Change Password</li>
                                 <li class="mdl-menu__item">Change Password</li>
+                                <li class="mdl-menu__item">
+                                    <a class="" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                {{-- @endguest --}}
+
                             </ul>
                         </div>
                     </div>

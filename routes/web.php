@@ -25,13 +25,32 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 // ADMIN VIEWS
-Route::get('/adm', 'Auth\AdminLoginController@index')->name('adminLogin');
-Route::get('/adm/consultas' , 'Admin\ConsultasController@index')->name('consultas');
+Route::get('/adm', [
+    'uses'=>'Auth\AdminLoginController@index',
+    'as'=>'adminLogin'
+    ]);
 
-Route::get('/adm/usuarios', 'Admin\UsersController@index')->name('usuarios');
-Route::get('/adm/usuarios/{id}', 'Admin\UsersController@showUser')->name('showUser');
+Route::get('/adm/consultas' , [
+    'uses'=>'Admin\ConsultasController@index',
+    'as'=>'consultas',
+    'middleware'=>'roles',
+    'roles'=>['admin', 'superAdmin']
+    ]);
 
-// Route::delete('')
+Route::get('/adm/usuarios', [
+    'uses'=>'Admin\UsersController@index',
+    'as'=>'usuarios',
+    'middleware'=>'roles',
+    'roles'=>['admin', 'superAdmin']
+    ]);
+
+Route::get('/adm/usuarios/{id}', [
+    'uses'=>'Admin\UsersController@showUser',
+    'as'=>'showUser',
+    'middleware'=>'roles',
+    'roles'=>['admin', 'superAdmin']
+    ]);
+
 
 
 Route::get('/adm/productos/new', 'Admin\ProductosController@create')->name('productos');

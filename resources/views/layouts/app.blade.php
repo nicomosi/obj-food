@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url('admin/dist/css/style.css')}}" />
 </head>
 <body>
     <div id="app">
@@ -72,9 +74,14 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="padding:0 !important; height:92vh">
             @yield('content')
         </main>
     </div>
+    {{-- <script type="text/javascript" src="{{url('admin/assets/plugin/jquery/jquery-3.3.1.min.js')}}"></script> --}}
+    <!-- Popper Plugin -->
+    <script type="text/javascript" src="{{url('admin/assets/plugin/popper/popper.min.js')}}"></script>
+    <!-- Bootstrap Framework -->
+    <script type="text/javascript" src="{{url('admin/assets/plugin/bootstrap/bootstrap.min.js')}}"></script>
 </body>
 </html>
