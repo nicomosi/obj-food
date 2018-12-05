@@ -29,4 +29,4 @@
     <!-- SmoothScroll Plugin JavaScript-->
     <script src="{{url('assets/plugin/smoothscroll/smoothscroll.min.js')}}"></script>
     <!--Custom JavaScript-->
-    <script src="{{url('js/custom.js')}}"></script>
+    <script src="{{url('dist/js/custom.js')}}"></script>

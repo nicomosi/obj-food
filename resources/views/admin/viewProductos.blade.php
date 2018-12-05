@@ -618,9 +618,9 @@
                                         <tbody>
                                             @foreach ($productos as $producto)
                                                 <tr>
-                                                    <td><a href="/adm/productos/{{$producto->id}}">{{$producto->producto_nombre}}</a></td>
-                                                    <td>{{$producto->producto_stock}}</td>
-                                                    <td>{{$producto->producto_precio}}</td>
+                                                    <td><a href="/adm/productos/{{$producto->id}}">{{$producto->nombre}}</a></td>
+                                                    <td>{{$producto->stock}}</td>
+                                                    <td>{{$producto->precio}}</td>
                                                     <td>
                                                         <a href="/adm/productos/{{$producto->id}}">Editar</a>
                                                     </td>

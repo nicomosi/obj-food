@@ -612,23 +612,33 @@
                                         @csrf
 
                                         <div class="form-group">
-                                            <label for="producto_nombre">Nombre del Producto</label>
-                                            <input class="form-control" type="text" name="producto_nombre" placeholder="Nombre del Producto">
+                                            <label for="nombre">Nombre del Producto</label>
+                                            <input class="form-control" type="text" name="nombre" placeholder="Nombre del Producto">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="producto_precio">Precio</label>
-                                            <input type="number" class="form-control" placeholder="$5000" name="producto_precio">
+                                            <label for="precio">Precio</label>
+                                            <input type="number" class="form-control" placeholder="$5000" name="precio">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="producto_stock">Stock</label>
-                                            <input type="number" class="from-control" name="producto_stock">
+                                            <label for="stock">Stock</label>
+                                            <input type="number" class="from-control" name="stock">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="producto_foto">Foto del Producto</label>
-                                            <input name="producto_foto" class="form-controll" type="file">
+                                            <label for="foto1">Foto 1</label>
+                                            <input name="foto1" class="form-controll" type="file">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="foto2">Foto 2</label>
+                                            <input name="foto2" class="form-controll" type="file">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="foto3">Foto 3</label>
+                                            <input name="foto3" class="form-controll" type="file">
                                         </div>
 
                                         <button class="btn btn-primary" type="submit">Cargar Producto</button>

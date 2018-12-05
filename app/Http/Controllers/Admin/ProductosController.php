@@ -39,19 +39,37 @@ class ProductosController extends Controller
     {
         $success = 'Tu producto fue agregado';
 
-        
         $producto = Producto::create([
-            'producto_nombre' => $request->input('producto_nombre'),
-            'producto_precio' => $request->input('producto_precio'),
-            'producto_stock' => $request->input('producto_stock'),
-            'producto_foto' => 'default',
+            'nombre' => $request->input('nombre'),
+            'precio' => $request->input('precio'),
+            'stock' => $request->input('stock'),
+            'foto1' => 'default.jpg',
+            'foto2' => 'default.jpg',
+            'foto3' => 'default.jpg',
         ]); 
-        $tipoFoto = $request->producto_foto->getClientOriginalExtension();
-        $fotoName = $producto->id.'_producto' . time() . '.' . $tipoFoto;
-        $request->producto_foto->storeAs('public/productos', $fotoName);
-        $producto->producto_foto = $fotoName;
+        if($request->has('foto1')) {
+            $tipoFoto = $request->foto1->getClientOriginalExtension();
+            $fotoName = $producto->id.'_producto' . time() . '.' . $tipoFoto;
+            $request->foto1->storeAs('public/productos', $fotoName);
+            $producto->foto1 = $fotoName;
+            $producto->save();
+        }
+        if($request->has('foto2')) {
+            $tipoFoto = $request->foto2->getClientOriginalExtension();
+            $fotoName = $producto->id.'_producto' . time() . '.' . $tipoFoto;
+            $request->foto2->storeAs('public/productos', $fotoName);
+            $producto->foto2= $fotoName;
+            $producto->save();
+        }
+        if($request->has('foto3')) {
+            $tipoFoto = $request->foto3->getClientOriginalExtension();
+            $fotoName = $producto->id.'_producto' . time() . '.' . $tipoFoto;
+            $request->foto3->storeAs('public/productos', $fotoName);
+            $producto->foto3 = $fotoName;
+            $producto->save();
+        }
         $producto->save();
-
+    
         return redirect('/adm/productos');
         }
 
@@ -76,16 +94,30 @@ class ProductosController extends Controller
     public function edit(Request $request, $id)
     {
         $producto = Producto::find($id);
-        $producto->producto_nombre = $request->input('producto_nombre');
-        $producto->producto_stock = $request->input('producto_stock');
-        $producto->producto_precio = $request->input('producto_precio');
+        $producto->nombre = $request->input('nombre');
+        $producto->stock = $request->input('stock');
+        $producto->precio = $request->input('precio');
         $producto->destacado = $request->input('destacado');
 
-        if($request->has('producto_foto')) {
-            $tipoFoto = $request->producto_foto->getClientOriginalExtension();
+        if($request->has('foto1')) {
+            $tipoFoto = $request->foto1->getClientOriginalExtension();
             $fotoName = $producto->id.'_producto' . time() . '.' . $tipoFoto;
-            $request->producto_foto->storeAs('public/productos', $fotoName);
-            $producto->producto_foto = $fotoName;
+            $request->foto1->storeAs('public/productos', $fotoName);
+            $producto->foto1 = $fotoName;
+            $producto->save();
+        }
+        if($request->has('foto2')) {
+            $tipoFoto = $request->foto2->getClientOriginalExtension();
+            $fotoName = $producto->id.'_producto' . time() . '.' . $tipoFoto;
+            $request->foto2->storeAs('public/productos', $fotoName);
+            $producto->foto2= $fotoName;
+            $producto->save();
+        }
+        if($request->has('foto3')) {
+            $tipoFoto = $request->foto3->getClientOriginalExtension();
+            $fotoName = $producto->id.'_producto' . time() . '.' . $tipoFoto;
+            $request->foto3->storeAs('public/productos', $fotoName);
+            $producto->foto3 = $fotoName;
             $producto->save();
         }
         $producto->save();
