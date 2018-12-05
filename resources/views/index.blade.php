@@ -45,18 +45,18 @@
                                 <div class="product-img">
                                     <div class="owl-carousel owl-theme theme-owlslider dots-overlay text-center">
                                         <div class="theme-owlslider-container">
-                                            <a href="#"><img class="img-responsive" src="/storage/productos/{{$producto->foto1}}" alt=""></a>
+                                            <a href="/producto/{{$producto->id}}"><img class="img-responsive" src="/storage/productos/{{$producto->foto1}}" alt=""></a>
                                         </div>
                                         <div class="theme-owlslider-container">
-                                            <a href="#"><img class="img-responsive" src="/storage/productos/{{$producto->foto2}}" alt=""></a>
+                                            <a href="/producto/{{$producto->id}}"><img class="img-responsive" src="/storage/productos/{{$producto->foto2}}" alt=""></a>
                                         </div>
                                         <div class="theme-owlslider-container">
-                                            <a href="#"><img class="img-responsive" src="/storage/productos/{{$producto->foto3}}" alt=""></a>
+                                            <a href="/producto/{{$producto->id}}"><img class="img-responsive" src="/storage/productos/{{$producto->foto3}}" alt=""></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="product-details">
-                                    <h5 class="title"><a href="#">{{$producto->nombre}}</a></h5>
+                                    <h5 class="title"><a href="/producto/{{$producto->id}}">{{$producto->nombre}}</a></h5>
                                     <div class="price">
                                         <del>$179.99</del>{{$producto->precio}}
                                     </div>
@@ -87,7 +87,7 @@
                                     @foreach ($productos as $producto)
                                         <div class="theme-owlslider-container">
                                             <img class="img-responsive" src="/storage/productos/{{$producto->foto1}}" alt="img producto">
-                                            <h6 class="title"><a href="#">{{$producto->nombre}}</a></h6>
+                                            <h6 class="title"><a href="/producto/{{$producto->id}}">{{$producto->nombre}}</a></h6>
                                             <div class="price">${{$producto->precio}}</div>
                                         </div>
                                     @endforeach

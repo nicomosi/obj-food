@@ -56,6 +56,11 @@
                                         </div>
 
                                         <div class="form-group">
+                                            <label for="descripcion">Descripcion:</label>
+                                            <textarea name="descripcion" class="form-control" cols="30" rows="10"></textarea>
+                                        </div>
+
+                                        <div class="form-group">
                                             <label for="stock">Stock</label>
                                             <input type="number" class="from-control" name="stock">
                                         </div>
