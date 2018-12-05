@@ -22,6 +22,7 @@ class UsersController extends Controller
     public function showUser($id)
     {
         $user=User::find($id);
+        // $userRole=
         return view('admin.user.form')->with('user', $user);
 
     }

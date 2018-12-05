@@ -70,10 +70,9 @@ class RegisterController extends Controller
        $user = User::create([
         'name' => $data['name'],
         'email' => $data['email'],
-        'role_id'=>3,
         'password' => bcrypt($data['password'])
         ]);
-
+        $user->attach(Role::where('name', 'user')->first());
         return $user;
     }
 }

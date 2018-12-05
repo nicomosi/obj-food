@@ -89,9 +89,11 @@
                                                     <div class="form-group">
                                                         <label class="col-form-label">Tipo de Usuario</label>
                                                         <select class="form-control" name="role_id">
-                                                            <option selected disabled value="">Rol</option>
-                                                            <option value="3">Cliente</option>
-                                                            <option value="2">Admin</option>
+
+                                                                <option selected disabled value="">Rol</option>
+                                                                <option value="">Cliente</option>
+                                                                <option value="">Admin</option>
+                                                                <option value="">SuperAdmin</option>
                                                         </select>
                                                     </div>
                                                 </div>
