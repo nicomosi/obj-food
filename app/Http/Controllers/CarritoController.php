@@ -36,7 +36,9 @@ class CarritoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $carrito = Carrito::craete([
+            
+        ]);
     }
 
     /**

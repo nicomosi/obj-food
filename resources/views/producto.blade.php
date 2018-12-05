@@ -3,6 +3,8 @@
 {{-- Start Head tag --}}
 @include('partials._head')
 {{-- End Head tag --}}
+
+
 <body>
 
     <div class="wrapper">
@@ -77,7 +79,7 @@
                                     </div>
                                 </div>
                                 <div class="cart-button">
-                                    <a href="#" onclick="addCarrito" class="btn btn-dark"><i class="icon-basket mr-2"></i> Agregar al Carrito</a>
+                                    <a href="#" id="addCarrito" onClick="addCarrito" class="btn btn-dark"><i class="icon-basket mr-2"></i> Agregar al Carrito</a>
                                     <a href="#" class="btn btn-outline btn-primary btn-outline-2x"><i class="fa fa-shopping-cart mr-2"></i>Comprar</a>
                                 </div>
                             </div>
@@ -299,11 +301,31 @@
 
     <script>
         
-        function addCarrito{
+        const addCarritobtn = document.getElementById('addCarrito')
+        addCarritobtn.addEventListener('click', function(e){
             
+            e.preventDefault();
+
+            var formData = new FormData();
+            
+            addCarrito();
+        })
+        function addCarrito(){
+            
+            var formData = new FormData();
+            
+            form.append('productoId', $producto->id);
+            form.append('userid', Auth::user()->id);
+
+            fetch('api/addCart',
+                {method: 'POST',
+                 body: formData,
+                }
+            );
         }
 
     </script>
+    
 
     <!-- Jquery Library 2.1 JavaScript-->
     <script src="assets/plugin/jquery/jquery-2.1.4.min.js"></script>

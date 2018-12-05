@@ -91,7 +91,7 @@ class ProductosController extends Controller
     }
 
     public function addCart(){
-
+        $carrito = Auth::user()->carrito()->attach($id);
     }
 
     public function deleteCart(){
