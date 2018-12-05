@@ -11,4 +11,5 @@
         //Intilize datable for ticket.
         $('.ticket-table').DataTable({
             responsive: true
-        });</script>
+        });
+    </script>

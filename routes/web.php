@@ -55,8 +55,8 @@ Route::get('/adm/usuarios/{id}', [
 
 Route::get('/adm/productos/new', 'Admin\ProductosController@create')->name('productos');
 Route::get('/adm/productos', 'Admin\ProductosController@index')->name('viewProductos');
+Route::post('/adm/productos/new', 'Admin\ProductosController@store')->name('newProducto');
 Route::get('/adm/productos/{id}', 'Admin\ProductosController@show')->name('editProducto');
-Route::post('/adm/productos', 'Admin\ProductosController@store')->name('newProducto');
 Route::put('/adm/productos/{id}', 'Admin\ProductosController@edit')->name('editProducto');
 Route::delete('/adm/productos/{id}/delete', 'Admin\ProductosController@destroy');
 
