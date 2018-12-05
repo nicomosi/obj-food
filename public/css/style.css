@@ -9106,8 +9106,8 @@ body {
   background: #fb9678;
   border: 2px dotted #fb9678; }
 
-.hdr-link a {
-  color: #DDD; }
+/* .hdr-link a {
+  color: #DDD; } */
 .hdr-link .separator {
   display: inline-block;
   vertical-align: middle;

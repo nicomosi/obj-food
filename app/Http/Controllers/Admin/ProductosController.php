@@ -43,6 +43,7 @@ class ProductosController extends Controller
             'nombre' => $request->input('nombre'),
             'precio' => $request->input('precio'),
             'stock' => $request->input('stock'),
+            'descripcion' => $request->input('descripcion'),
             'foto1' => 'default.jpg',
             'foto2' => 'default.jpg',
             'foto3' => 'default.jpg',
@@ -98,6 +99,7 @@ class ProductosController extends Controller
         $producto->stock = $request->input('stock');
         $producto->precio = $request->input('precio');
         $producto->destacado = $request->input('destacado');
+        $producto->descripcion = $request->input('descripcion');
 
         if($request->has('foto1')) {
             $tipoFoto = $request->foto1->getClientOriginalExtension();
@@ -120,6 +122,13 @@ class ProductosController extends Controller
             $producto->foto3 = $fotoName;
             $producto->save();
         }
+
+        if($request->has('descuento')){
+            $producto->descuento = $request->input('descuento');
+            $producto->precioDescuento = $producto->precio - ($producto->precio * $producto->descuento) / 100;
+            $producto->save();
+        }
+
         $producto->save();
         return redirect('/adm/productos/' . $producto->id);
     }

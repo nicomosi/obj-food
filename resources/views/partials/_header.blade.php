@@ -31,7 +31,7 @@
                             </ul>
                         </div>
                         <div class="col-md-7 hdr-link text-right">
-                            {{-- @guest --}}
+                            @guest
                             <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1" href="{{route('login')}}"><i class="icon-login mr-2"></i>Login</a>
                             {{-- <a href="#" class="btn btn-primary m-3" data-toggle="modal" data-target="#signInPopup">Sign In Popup</a> --}}
                             <div class="separator"></div>
@@ -39,27 +39,32 @@
                                     <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1" href="{{route('register')}}"><i class="icon-user-follow mr-2"></i>Registro</a>
                                 @endif
                                 <div class="separator"></div>
-                                {{-- @else --}}
+                                @else
                                 <a class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect button button-white button-sm m-1" id="my-account"><i class="icon-user-follow mr-2"></i>My Account</a>
-                                {{-- @endguest --}}
-                            {{-- @guest --}}
+                                @endguest
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="my-account">
-                                <li class="mdl-menu__item">Ingresar</li>
-                                <li class="mdl-menu__item">Registrarme</li>
 
-                                <li class="mdl-menu__item">My Cuenta</li>
+                                <li class="mdl-menu__item">Mi Perfil</li>
                                 <li class="mdl-menu__item">Change Password</li>
-                                <li class="mdl-menu__item">Change Password</li>
+                                @guest
+
+                                @else
+                                @if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('superAdmin'))
+                            <li class="mdl-menu__item"> <a href="{{Route('consultas')}}">Back Office</a></li>
+                                @endif
+
+                                @endguest
                                 <li class="mdl-menu__item">
                                     <a class="" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
+                                       onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('logout') }}
+                                        {{ __('Logout') }}
                                     </a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </li>
+                                        @csrf
+                                    </form>
+                                </li>
                                 {{-- @endguest --}}
 
                             </ul>
@@ -79,6 +84,9 @@
                             <ul class="menu">
                                 <li class="menu-megamenu-li">
                                     <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{{url('/')}}">Home</a>
+                                </li>
+                                <li class="menu-megamenu-li">
+                                    <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{{route('productosShow')}}">Viandas</a>
                                 </li>
                                 {{-- <li>
                                     <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Feature <i class="fa fa-chevron-down"></i></a>
@@ -129,7 +137,7 @@
                                         <li><a href="503.html">503 Temporarily Unavailable</a></li>
                                     </ul>
                                 </li> --}}
-                                <li class="menu-megamenu-li">
+                                {{-- <li class="menu-megamenu-li">
                                     <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Viandas <i class="fa fa-chevron-down"></i></a>
                                     <ul class="menu-megamenu">
                                         <li class="row">
@@ -206,8 +214,8 @@
                                             </div>
                                         </li>
                                     </ul>
-                                </li>
-                                <li>
+                                </li> --}}
+                                {{-- <li>
                                     <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Blog <i class="fa fa-chevron-down"></i></a>
                                     <ul class="menu-dropdown">
                                         <li>
@@ -237,7 +245,7 @@
                                         <li><a href="portfolio-grid.html">Portfolio Grid</a></li>
                                         <li><a href="portfolio-list.html">Portfolio List</a></li>
                                     </ul>
-                                </li>
+                                </li> --}}
                                 <li class="menu-megamenu-li">
                                     <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{{url('faq')}}">Faq</a>
                                 </li>

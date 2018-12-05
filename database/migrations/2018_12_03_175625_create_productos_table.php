@@ -18,6 +18,9 @@ class CreateProductosTable extends Migration
             $table->timestamps();
             $table->string('nombre');
             $table->string('precio');
+            $table->string('descripcion');
+            $table->string('descuento')->default('0');
+            $table->string('precioDescuento')->default('0');
             $table->string('stock');
             $table->string('foto1');
             $table->string('foto2');

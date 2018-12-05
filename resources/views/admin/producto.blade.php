@@ -63,6 +63,11 @@
                                         </div>
 
                                         <div class="form-group">
+                                            <label for="descripcion">Descripcion:</label>
+                                            <textarea name="descripcion" class="form-control" cols="30" rows="10">{{$producto->descripcion}}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
                                             <label for="foto1">Foto 1</label>
                                             <input name="foto1" class="form-controll" type="file">
                                         </div>
@@ -90,6 +95,11 @@
                                                 }
                                                 @endif
                                             </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="descuento">Descuento</label>
+                                            <input name="descuento" type="number" class="form-control" value="{{$producto->descuento}}">
                                         </div>
 
                                         <button class="btn btn-primary" type="submit">Cargar Producto</button>

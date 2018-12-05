@@ -11,17 +11,18 @@
 |
 */
 
-Route::get('/', 'ProductosController@index');
+Route::get('/', 'ProductosController@index')->name('home');
 Route::get('/faq', 'Controller@faq')->name('faq');
 
 Route::post('/nuevaConsulta', 'ConsultaController@store')->name('nuevaConsulta');
 
 Auth::routes();
 // Route::get('/login', 'HomeController@index')->name('login');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
 
+Route::get('/producto/{id}', 'ProductosController@show');
 
-
+Route::get('/productos', 'ProductosController@view')->name('productosShow');
 
 
 // ADMIN VIEWS

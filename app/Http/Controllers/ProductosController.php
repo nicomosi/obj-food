@@ -47,7 +47,8 @@ class ProductosController extends Controller
      */
     public function show($id)
     {
-        //
+        $producto = Producto::find($id);
+        return view('producto')->with('producto', $producto);
     }
 
     /**
@@ -82,5 +83,18 @@ class ProductosController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function view(){
+       $productos = Producto::all();
+       return view('/productos')->with('productos', $productos);
+    }
+
+    public function addCart(){
+
+    }
+
+    public function deleteCart(){
+        
     }
 }
